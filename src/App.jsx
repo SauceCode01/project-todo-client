@@ -4,7 +4,8 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = "http://localhost:5000/api/users"
+      const url = "https://project-todo-api.onrender.com/api/users"
+      console.log("fetching from: ", url)
       try {
         const response = await fetch(url)
         if (!response.ok) {
@@ -16,6 +17,8 @@ const App = () => {
       } catch (error) {
         console.error(error.message);
       }
+
+      console.log("fetching complete")
     }
     fetchData();
     
